@@ -14,5 +14,4 @@ Following along with the C# Player's Guide by RB Whitaker
 - Closed (not locked) door can be opened
 - Closed door can be locked
 - Locked door can be unlocked WITH the current passcode
-- Door must be given an initial passcode when instanced
 - Should be able to change the passcode. This is successful if first the initial passcode is given
