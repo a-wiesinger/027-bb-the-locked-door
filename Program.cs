@@ -11,5 +11,9 @@ Console.Clear();
 // User setup of initial door
 
 // Create door with user passcode
-Door door = new Door(Door.InitialPasscode());
-Console.WriteLine(door.Passcode);
+Door door = new Door();
+Console.WriteLine("***********************************");
+Console.WriteLine("Nice work. Your new door is closed.");
+Console.WriteLine($"Initial passcode set to: {door.Passcode}");
+
+// TODO - User attempts to change state of door
