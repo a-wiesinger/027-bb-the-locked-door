@@ -16,4 +16,26 @@ Console.WriteLine("***********************************");
 Console.WriteLine("Nice work. Your new door is closed.");
 Console.WriteLine($"Initial passcode set to: {door.Passcode}");
 
-// TODO - User attempts to change state of door
+// Change door state
+Console.Write("Please feel free to change the door's state -> ");
+string? userInput = Console.ReadLine();
+
+// Calls to change state
+switch (userInput)
+{
+    case "open":
+        door.OpenDoor();
+        break;
+    case "close":
+        door.CloseDoor();
+        break;
+    case "lock":
+        door.LockDoor();
+        break;
+    case "unlock":
+        door.UnlockDoor();
+        break;
+    default:
+        Console.WriteLine("Try again.");
+        break;
+}

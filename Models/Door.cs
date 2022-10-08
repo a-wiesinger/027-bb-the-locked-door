@@ -40,4 +40,36 @@ public class Door
 
         return "Wrong.";
     }
+
+    public void OpenDoor()
+    {
+        if (Closed)
+        {
+            Open = true;
+            Closed = false;
+            Console.WriteLine("Wow. That's a real nice nice open door there.");
+        }
+        else
+        {
+            Console.WriteLine("Sorry, the door isn't closed so you can't open it.");
+        }
+    }
+
+    public void CloseDoor()
+    {
+        if (Open)
+        {
+            Closed = true;
+        }
+    }
+
+    public void LockDoor()
+    {
+        
+    }
+
+    public void UnlockDoor()
+    {
+        
+    }
 }
