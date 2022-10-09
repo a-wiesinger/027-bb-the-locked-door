@@ -5,7 +5,7 @@ public class Door
     // Properties
     public bool Open { get; set; } = false;
     public bool Closed { get; set; } = false;
-    public bool UnLocked { get; set; } = false;
+    public bool Unlocked { get; set; } = false;
     public bool Locked { get; set; } = false;
     public string Passcode { get; set; }
     
@@ -60,16 +60,44 @@ public class Door
         if (Open)
         {
             Closed = true;
+            Open = false;
+            Console.WriteLine("By your command. The door is now closed.");
+        }
+        else
+        {
+            Console.WriteLine("Can't close a door if it isn't open, Jack.");
         }
     }
 
     public void LockDoor()
     {
-        
+        if (Unlocked && Closed)
+        {
+            Locked = true;
+            Console.WriteLine("Congratulations on your newly locked door.");
+        }
+        else
+        {
+            Console.WriteLine("Try closing the door first, bub.");
+        }
     }
 
     public void UnlockDoor()
     {
-        
+        Console.Write("Enter the current passcode: ");
+        string? enteredPassword = Console.ReadLine();
+
+        if (enteredPassword == Passcode)
+        {
+            if (Locked && Closed)
+            {
+                Unlocked = true;
+                Console.WriteLine("Nice! The door is unlocked.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Sorry, can't do that.");
+        }
     }
 }
